@@ -8,7 +8,8 @@ namespace YesNoBot
     class Program
     {
         private static readonly TelegramBotClient Bot = new TelegramBotClient("YOUR API CODE HERE");
-
+        private static Random rand = new Random();
+        
         static void Main(string[] args)
         {
             Bot.OnMessage += BotOnMessageReceived;
@@ -24,7 +25,6 @@ namespace YesNoBot
 
             if (message.Text.StartsWith("/yesno"))
             {
-                Random rand = new Random();
                 String answer = ((rand.Next(0, 2) == 0) ? "No" : "Yes");
                 Bot.SendTextMessageAsync(message.Chat.Id, answer, ParseMode.Html, false, false, message.MessageId);
                 Console.WriteLine("[Q] " + message.Text);
