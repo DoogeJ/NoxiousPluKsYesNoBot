@@ -4,8 +4,8 @@ A simple Telegram bot that responds to /yesno
 Also works in groups
 
 ## Requirements
-* .NET Core 2.0 (package `dotnet-sdk-2.x`)
-* Any OS that runs .NET Core 2.0 (Linux, Windows, Mac OS, whatever)
+* .NET 5.x
+* Any OS that runs .NET 5.x (Linux, Windows, Mac OS, whatever)
 
 ## Setup bot
 * Create a new bot in Botfather
