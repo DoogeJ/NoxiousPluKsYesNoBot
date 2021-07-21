@@ -21,12 +21,12 @@ namespace YesNoBot
         private static void BotOnMessageReceived(object sender, MessageEventArgs messageEventArgs)
         {
             var message = messageEventArgs.Message;
-            if (message == null || message.Type != MessageType.TextMessage) return;
+            if (message == null || message.Type != MessageType.Text) return;
 
             if (message.Text.StartsWith("/yesno"))
             {
                 String answer = ((rand.Next(0, 2) == 0) ? "No" : "Yes");
-                Bot.SendTextMessageAsync(message.Chat.Id, answer, ParseMode.Html, false, false, message.MessageId);
+                Bot.SendTextMessageAsync(message.Chat.Id, answer, ParseMode.Html, default, default, default, message.MessageId);
                 Console.WriteLine("[Q] " + message.Text);
                 Console.WriteLine("[A] " + answer);
             }
